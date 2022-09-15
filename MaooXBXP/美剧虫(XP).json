@@ -1,0 +1,76 @@
+{
+  "author":"chabaolong",
+  "name": "美剧虫(XP)",
+  "ua": "",
+  "homeUrl": "https://www.meijuchong.cc",
+  "cateManual": {
+    "欧美剧": "1", 
+    "海外剧": "2",
+    "日韩剧": "3",	
+    "电影":   "4",
+	"纪录片": "6"
+  },
+
+// Home Summary ====================================================首页
+  "homeVodNode": "//div[@class='cbox1']/ul/li",
+  "homeVodName": "/a/@title",
+  "homeVodNameR": "",
+  "homeVodId": "/a/@href",
+  "homeVodIdR": "/voddetail/(\\w+).html",
+  "homeVodImg": "/a/@data-original",
+  "homeVodImgR": "",
+  "homeVodMark": "",
+  "homeVodMarkR": "",
+  
+// Category Summary ================================================分类
+  "cateUrl": "https://www.meijuchong.cc/vodshow/{cateId}--------{catePg}---.html",
+  "cateVodNode": "//ul[@class='vodlist vodlist_wi author*qq3626/95/000 clearfix']/li",
+  "cateVodName": "/a/@title",
+  "cateVodId": "/a/@href",
+  "cateVodIdR": "/voddetail/(\\w+).html",
+  "cateVodImg": "/a/@data-original",
+  "cateVodMark": "",
+  
+// Category Details ================================================影片详情
+  "dtUrl": "https://www.meijuchong.cc/vodplay/{vid}-1-1.html",
+  "dtNode": "//body[@class='bstem']",
+  "dtName": "//div[@class='play_box']/div[@class='left_row fl']//h2[@class='title margin_0']/text()",
+  "dtNameR": "",
+  "dtImg": "//div[@class='play_vlist_thumb vnow lazyload']/@data-original",
+  "dtImgR": "",
+  "dtCate": "//div[@class='player gbys7']/div[@class='play_text'][2]/p/a[3]/text()",
+  "dtCateR": "",
+  "dtYear": "//div[@class='play_text'][2]/p/a[1]/text()",
+  "dtYearR": "",
+  "dtArea": "//div[@class='play_text'][2]/p/a[2]/text()",
+  "dtAreaR": "",
+  "dtMark": "",
+  "dtMarkR": "",
+  "dtActor": "//p[contains(text(), '主演：')]/a/text()",
+  "dtActorR": "",
+  "dtDirector": "//p[contains(text(), '导演：')]/a/text()",
+  "dtDirectorR": "",
+  "dtDesc": "",
+  "dtDescR": "",
+  
+// Playlist ========================================================播放页
+  "dtFromNode": "//a[@class='playnow_info']",
+  "dtFromName": "/text()",
+  "dtUrlNode": "//div[@class='playlist_full']/ul",
+  "dtUrlSubNode": "/li/a",
+  "dtUrlId": "/@href",
+  "dtUrlIdR": "/vodplay/(\\S+).html",
+  "dtUrlName": "/text()",
+  "dtUrlNameR": "",
+  "playUrl": "https://www.meijuchong.cc/vodplay/{playUrl}.html",
+  "playUa": "",
+  
+// Search Results ==================================================
+	"searchUrl": "https://www.meijuchong.cc/index.php/ajax/suggest?mid=1&wd={wd}&limit=10",
+	"scVodNode": "json:list",
+	"scVodName": "name",
+	"scVodId": "id",
+	"scVodIdR": "",
+	"scVodImg": "pic",
+	"scVodMark": ""
+}
