@@ -3,11 +3,12 @@
   "tihuan": "cnzz.com", 
 //------填网站链接
   "url": "https://www.52kpop1.com",  
-  "shouye": "4",
+  "shouye": "1",
 //------网站列表的分类
-  "fenlei": "电影$/vodshow/1--------#韩剧$/vodshow/2--------#韩综$/vodshow/3--------#最新推荐$/vodshow/4--------#Running Man$/vodshow/20--------",
+  //"fenlei": "电影$/vodshow/1--------#韩剧$/vodshow/2--------#韩综$/vodshow/3--------#最新推荐$/vodshow/4--------#Running Man$/vodshow/20--------",
+  "fenlei": "电影$/list/1-#韩剧$/list/2-#韩综$/list/3-#最新推荐$/list/4-#Running Man$/list/20-",
 //------网站翻页链接的后缀
-  "houzhui": "---.html",   
+  "houzhui": ".html",   
   "shifouercijiequ": "0",
   "jiequqian": "空",
   "jiequhou": "空",

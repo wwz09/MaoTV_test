@@ -16,11 +16,6 @@
   "biaotihou": "\"",
   "lianjieqian": "href=\"",
   "lianjiehou": "\"",
-
-  //新版Biubiu参数：副标题 (不需要的话，就不填写或者删除副标题2个字段也可以。)
-  "fubiaotiqian": "pic-text\">",
-  "fubiaotihou": "</span",
-
   "sousuoqian": "/index.php/ajax/suggest?mid=1&wd=",
   "sousuohou": "&limit=500",
   "sousuohouzhui": "/detail/",
@@ -39,29 +34,26 @@
   "ssbiaotihou": "空",
   "sslianjieqian": "空",
   "sslianjiehou": "空",
-
   "bfshifouercijiequ": "0",
   "bfjiequqian": "空",
   "bfjiequhou": "空",
-  "bfjiequshuzuqian": "class=\"stui-content__playlist",
+  "bfjiequshuzuqian": "class=\"stui-content__playlist clearfix\"",
   "bfjiequshuzuhou": "</ul>",
-
-  "zhuangtaiqian": "年份：</span>",
+  "zhuangtaiqian": "class=\"data\"",
   "zhuangtaihou": "</p>",
   "daoyanqian": "导演：</span>",
   "daoyanhou": "</p>",
   "zhuyanqian": "主演：</span>",
   "zhuyanhou": "</p>",
-  "juqingqian": "简介：</span>",
-  "juqinghou": "<a",
-
+  "juqingqian": "",
+  "juqinghou": "",
   "bfyshifouercijiequ": "0",
   "bfyjiequqian": "空",
   "bfyjiequhou": "空",
-  "bfyjiequshuzuqian": "<a",
-  "bfyjiequshuzuhou": "/a>",
-  "bfbiaotiqian": ">",
-  "bfbiaotihou": "<",
+  "bfyjiequshuzuqian": "<li>",
+  "bfyjiequshuzuhou": "</li>",
+  "bfbiaotiqian": "\">",
+  "bfbiaotihou": "</a>",
   "bflianjieqian": "href=\"",
   "bflianjiehou": "\""
 }
