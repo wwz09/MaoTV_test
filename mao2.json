@@ -31,11 +31,11 @@
 
 
 # 直播
-//"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9ub3RhYnVnLm9yZy93d3owOS9zdWQvcmF3L21hc3Rlci90di9saXZlLnR4dA=="]}]}],
+"lives":[{"group":"redirect","channels":[{"name":"live","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9ub3RhYnVnLm9yZy93d3owOS9zdWQvcmF3L21hc3Rlci90di9saXZlLnR4dA=="]}]}],
 
 //"lives":[{"group":"redirect","channels":[{"name":"TV","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9ub3RhYnVnLm9yZy93d3owOS9zdWQvcmF3L21hc3Rlci90di9UVi50eHQ="]}]}],
 
-"lives":[{"group":"redirect","channels":[{"name":"iptv","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9ub3RhYnVnLm9yZy93d3owOS9zdWQvcmF3L21hc3Rlci90di9pcHR2LnR4dA=="]}]}],
+//"lives":[{"group":"redirect","channels":[{"name":"iptv","urls":["proxy://do=live&type=txt&ext=aHR0cHM6Ly9ub3RhYnVnLm9yZy93d3owOS9zdWQvcmF3L21hc3Rlci90di9pcHR2LnR4dA=="]}]}],
 
 
 ## sites ##
