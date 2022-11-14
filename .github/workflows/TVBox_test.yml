@@ -15,30 +15,30 @@ jobs:
             repoName: QBox
             branchName: main
             appName: QBox
-         
+            osName: tx
+          
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
       - name: Check New Commit
         run: |
-          upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
+         upStream=https://github.com/${{ matrix.userName }}/${{ matrix.repoName }}
           echo "upStream=$upStream" >> $GITHUB_ENV
           commit=$(curl -sL $upStream/commits/${{ matrix.branchName }} |grep -o "/${{ matrix.userName }}/${{ matrix.repoName }}/commit/[a-z0-9]\+" |head -1 | cut -d\/ -f5)
-          if ! grep -q "$commit" README.md || [ "${{ inputs.rebuild }}" == "true" ]; then
+          if ! git log --oneline |grep -q "$commit"; then
             echo "commit=$commit" >> $GITHUB_ENV
-            echo "commitS=${commit:0:7}" >> $GITHUB_ENV
+            echo "tag=$(date -d '8 hour' -u +%Y%m%d-%H%M)" >> $GITHUB_ENV
           fi
+          
       - name: Checkout Source Code and Zip
         if: ${{ env.commit }}
         run: |
           git clone ${{ env.upStream }} ${{ matrix.repoName }}
           cd ${{ matrix.repoName }}
           git checkout ${{ env.commit }}
-          echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
-          zip -q -x ".git/*" -r source-${{ env.commitS }}.zip .
+          zip -q -x ".git/*" -r source.zip .
           
       - name: DIY
         if: ${{ env.commit }}
@@ -92,10 +92,6 @@ jobs:
           sed -i '$a\RELEASE_STORE_PASSWORD=TVBoxOSC'       ./gradle.properties
           sed -i '$a\RELEASE_KEY_PASSWORD=TVBoxOSC'         ./gradle.properties
           
-      - name: Setup Gradle
-        if: ${{ env.commit }}
-        uses: gradle/gradle-build-action@v2
-        
       - name: Build With Gradle
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
@@ -112,7 +108,7 @@ jobs:
           for file in `find ~ -name "*.apk" -print`; do
             mv "$file" apk/test_${{ matrix.appName }}_${{ env.tag }}.apk
           done
-      
+          
       - name: Upload App To Artifact
         uses: actions/upload-artifact@v3
         if: ${{ env.commit }}
@@ -120,20 +116,15 @@ jobs:
           name: ${{ matrix.appName }}
           path: ${{ matrix.repoName }}/apk/*
           
-      - name: Whether Or Not to Publish
-        if: ${{ inputs.donotpublish && env.commit }}
-        run: |
-          echo "commit=" >> $GITHUB_ENV
           
       - name: Release and Upload Assets
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v1
         if: ${{ env.commit }}
         with:
           name: ${{ env.tag }}
-          tag: ${{ env.tag }}
-          allowUpdates: true
-          removeArtifacts: true
-          artifacts: |
-            ${{ matrix.repoName }}/apk/*.apk
-            
-      
+          tag_name: ${{ env.tag }}
+          body: ${{ env.commit }}
+          files: |
+             ${{ matrix.repoName }}/apk/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

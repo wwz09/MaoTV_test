@@ -15,6 +15,7 @@ jobs:
             repoName: MaoTV
             branchName: main
             appName: MaoTV
+            osName: lm
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -48,7 +49,7 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/pyramid.aar app/libs/pyramid.aar
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_bg.png app/src/main/res/drawable/app_bg.png
           sed -i 's%TVBox%老猫TV%g' app/src/main/res/values/strings.xml
-          sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.lm%g' app/build.gradle
+          sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java    
            
       - name: Extra Modify
@@ -120,15 +121,16 @@ jobs:
           echo "commit=" >> $GITHUB_ENV
           
       - name: Release and Upload Assets
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v1
         if: ${{ env.commit }}
         with:
           name: ${{ env.tag }}
-          tag: ${{ env.tag }}
-          allowUpdates: true
-          removeArtifacts: true
-          artifacts: |
+          tag_name: ${{ env.tag }}
+          body: ${{ env.commit }}
+          files: |
             ${{ matrix.repoName }}/apk/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
             
       
       
