@@ -11,10 +11,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: wwz09
-            repoName: QBox
+          - userName: winstonxg
+            repoName: CatVodTVOSC
             branchName: main
-            appName: QBox
+            appName: CTVBox
             osName: tt
          
     steps:
