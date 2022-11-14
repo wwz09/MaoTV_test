@@ -12,9 +12,9 @@ jobs:
       matrix:
         include:
           - userName: wwz09
-            repoName: MaoTV
+            repoName: TBox
             branchName: main
-            appName: MaoTV
+            appName: TBox
             osName: tt
          
     steps:
