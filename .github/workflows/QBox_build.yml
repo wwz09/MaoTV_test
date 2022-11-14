@@ -52,6 +52,7 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/png/drawable-xxhdpi/app_icon.png app/src/main/res/drawable-xxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/drawable-xxxhdpi/app_icon.png app/src/main/res/drawable-xxxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_bg.png app/src/main/res/drawable/app_bg.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/fragment_user.xml app/src/main/res/layout/fragment_user.xml
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%TVBox%QBox%g' app/src/main/res/values/strings.xml
           sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   
