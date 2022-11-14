@@ -47,6 +47,10 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/xwalk_shared_library-23.53.589.4.aar app/libs/xwalk_shared_library-23.53.589.4.aar
           cp -rf $GITHUB_WORKSPACE/DIY/thunder.jar app/libs/thunder.jar
           cp -rf $GITHUB_WORKSPACE/DIY/pyramid.aar app/libs/pyramid.aar
+          cp -rf $GITHUB_WORKSPACE/DIY/files/taka旧主界面.xml app/src/main/res/layout/fragment_user.xml
+          cp -rf $GITHUB_WORKSPACE/DIY/files/activity_home_top界面.xml app/src/main/res/layout/activity_home.xml
+          cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
+          sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' app/src/main/res/values-zh/strings.xml
           sed -i 's%TVBox%TBox%g' app/src/main/res/values-zh/strings.xml
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%HawkConfig.HOME_REC, 2%HawkConfig.HOME_REC, 1%g' app/src/main/java/com/github/tvbox/osc/base/App.java  
