@@ -52,13 +52,13 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/files/背景1.png app/src/main/res/drawable/app_bg.png
           sed -i 's%android:visibility="gone"%%g'  app/src/main/res/layout/fragment_user.xml
-　　　　　　sed -i 's%tvWifi"%tvWifi" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
-　　　　　　sed -i 's%tvFind"%tvFind" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
-　　　　　　sed -i 's%tvMenu"%tvMenu" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
+　　　　　 sed -i 's%tvWifi"%tvWifi" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
+          sed -i 's%tvFind"%tvFind" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
+          sed -i 's%tvMenu"%tvMenu" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
           sed -i 's%MM月dd日%yyyy年 MM月 dd日%g' $CURRENT_DIR/$DIR/app/src/main/res/values-zh/strings.xml
-　　　　　　sed -i 's%dd MMM%dd MMM yyyy%g' app/src/main/res/values/strings.xml
-　　　　　　sed -i 's%800%570%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-　　　　　　sed -i 's%getContext(), 3%getContext(), 2%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+　　 　　　sed -i 's%dd MMM%dd MMM yyyy%g' app/src/main/res/values/strings.xml
+　　　　　 sed -i 's%800%570%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+　　　　 　sed -i 's%getContext(), 3%getContext(), 2%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values-zh/strings.xml
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values/strings.xml
