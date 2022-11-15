@@ -44,7 +44,7 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          
+          cp -rf $GITHUB_WORKSPACE/DIY/files/strings.xml app/src/main/res/values-zh/strings.xml
           cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/files/背景1.png app/src/main/res/drawable/app_bg.png
@@ -116,7 +116,7 @@ jobs:
           rm -rf apk/
           mkdir -p apk/
           for file in `find ~ -name "*.apk" -print`; do
-            mv "$file" apk/test_${{ matrix.appName }}_${{ env.tag }}.apk
+            mv "$file" apk/${{ matrix.userName }}_${{ matrix.appName }}_${{ env.tag }}.apk
           done
       
       - name: Upload App To Artifact
