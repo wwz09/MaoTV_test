@@ -44,7 +44,7 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/qbox/strings.xml app/src/main/res/values-zh/strings.xml
+          cp -rf $GITHUB_WORKSPACE/DIY/tbox/strings.xml app/src/main/res/values-zh/strings.xml
           cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/等待图标.png app/src/main/res/drawable/icon_loading.png
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
