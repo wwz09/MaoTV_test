@@ -51,7 +51,7 @@ jobs:
           sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' app/src/main/res/values-zh/strings.xml
           sed -i 's%TVBox%TBox%g' app/src/main/res/values-zh/strings.xml
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
-          sed -i 's%HawkConfig.HOME_REC, 2%HawkConfig.HOME_REC, 1%g' app/src/main/java/com/github/tvbox/osc/base/App.java  
+          sed -i 's%HOME_REC, 2%HOME_REC, 1%g' app/src/main/java/com/github/tvbox/osc/base/App.java  
           sed -i 's%HomeActivity.getRes().getString(R.string.app_source));% "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java     
            
       - name: Extra Modify
