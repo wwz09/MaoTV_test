@@ -44,11 +44,11 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/files/strings.xml app/src/main/res/values-zh/strings.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/icon_loading.png app/src/main/res/drawable/icon_loading.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
-          cp -rf $GITHUB_WORKSPACE/DIY/files/背景1.png app/src/main/res/drawable/app_bg.png
+          cp -rf $GITHUB_WORKSPACE/DIY/qbox/strings.xml app/src/main/res/values-zh/strings.xml
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/等待图标.png app/src/main/res/drawable/icon_loading.png
+          cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
+          cp -rf $GITHUB_WORKSPACE/DIY/png/背景1.png app/src/main/res/drawable/app_bg.png
           sed -i 's%android:visibility="gone"%%g'  app/src/main/res/layout/fragment_user.xml
           sed -i 's%tvWifi"%tvWifi" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
           sed -i 's%tvFind"%tvFind" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
