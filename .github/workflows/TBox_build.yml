@@ -44,9 +44,7 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/xwalk_shared_library-23.53.589.4.aar app/libs/xwalk_shared_library-23.53.589.4.aar
-          cp -rf $GITHUB_WORKSPACE/DIY/thunder.jar app/libs/thunder.jar
-          cp -rf $GITHUB_WORKSPACE/DIY/pyramid.aar app/libs/pyramid.aar
+          cp -rf $GITHUB_WORKSPACE/DIY/files/icon_loading.png app/src/main/res/drawable/icon_loading.png
           cp -rf $GITHUB_WORKSPACE/DIY/files/taka旧主界面.xml app/src/main/res/layout/fragment_user.xml
           cp -rf $GITHUB_WORKSPACE/DIY/files/activity_home_top界面.xml app/src/main/res/layout/activity_home.xml
           cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
