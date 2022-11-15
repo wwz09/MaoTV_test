@@ -117,7 +117,7 @@ jobs:
           rm -rf apk/
           mkdir -p apk/
           for file in `find ~ -name "*.apk" -print`; do
-            mv "$file" apk/test_${{ matrix.appName }}_${{ env.tag }}.apk
+            mv "$file" apk/${{ matrix.userName }}_${{ matrix.appName }}_${{ env.tag }}.apk
           done
       
       - name: Upload App To Artifact
