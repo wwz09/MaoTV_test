@@ -56,7 +56,7 @@ jobs:
           sed -i 's%6000%5000%g'  app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
           sed -i 's%380+200*spanCount%680+600*spanCount%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%spanCount+1%spanCount%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-          sed -i 's%"color_FFFFFF">#ffffffff%"color_0066FF">#0066FF%g' app/src/main/res/values/colors.xml
+          sed -i 's%"color_FFFFFF"%"color_0066FF"%g' app/src/main/res/values/colors.xml
           sed -i 's%color_FFFFFF%color_0066FF%g' app/src/main/res/layout/item_home_sort.xml
           sed -i 's%color_FFFFFF%color_0066FF%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
