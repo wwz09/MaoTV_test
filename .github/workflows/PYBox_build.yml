@@ -45,10 +45,10 @@ jobs:
         working-directory: ${{ matrix.repoName }}
         run: |
           cp -rf $GITHUB_WORKSPACE/DIY/files/strings.xml app/src/main/res/values/strings.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标2.png app/src/main/res/drawable-hdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标2.png app/src/main/res/drawable-xhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标2.png app/src/main/res/drawable-xxhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标2.png app/src/main/res/drawable-xxxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/原版透明.png app/src/main/res/drawable-hdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/原版透明.png app/src/main/res/drawable-xhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/原版透明.png app/src/main/res/drawable-xxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/原版透明.png app/src/main/res/drawable-xxxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/files/背景2.png app/src/main/res/drawable/app_bg.png
           sed -i 's%播放器 % %g' app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
