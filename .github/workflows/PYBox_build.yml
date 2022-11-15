@@ -58,7 +58,6 @@ jobs:
           sed -i 's%spanCount+1%spanCount%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/res/layout/item_home_sort.xml
           sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-          sed -i 's%片头片尾% %' $CURRENT_DIR/$DIR/app/src/main/res/layout/player_vod_control_view.xml
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%TVBox%PYBox%g' app/src/main/res/values/strings.xml
           sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   

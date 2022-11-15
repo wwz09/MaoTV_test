@@ -45,10 +45,7 @@ jobs:
         working-directory: ${{ matrix.repoName }}
         run: |
           
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable-hdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable-xhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable-xxhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable-xxxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/files/图标1透明.png app/src/main/res/drawable/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/files/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/files/背景1.png app/src/main/res/drawable/app_bg.png
           sed -i 's%android:visibility="gone"%%g'  app/src/main/res/layout/fragment_user.xml
@@ -62,7 +59,7 @@ jobs:
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values-zh/strings.xml
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values/strings.xml
-          sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   
+          sed -i 's%HomeActivity.getRes().getString(R.string.app_source));% "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java 
           
       - name: Extra Modify
         if: ${{ env.commit }}
