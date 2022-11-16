@@ -44,10 +44,10 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标3.png app/src/main/res/drawable-hdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标3.png app/src/main/res/drawable-xhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标3.png app/src/main/res/drawable-xxhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标3.png app/src/main/res/drawable-xxxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标8.png app/src/main/res/drawable-hdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标8.png app/src/main/res/drawable-xhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标8.png app/src/main/res/drawable-xxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标8.png app/src/main/res/drawable-xxxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/png/背景2.png app/src/main/res/drawable/app_bg.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_banner.png app/src/main/res/drawable/app_banner.png
@@ -61,7 +61,7 @@ jobs:
           sed -i 's%color_CCFFFFFF%color_6200EE%g' app/src/main/res/layout/fragment_user.xml
           sed -i 's%color_BBFFFFFF%color_6200EE%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
-          sed -i 's%PythonBox%PYBox%g' app/src/main/res/values/strings.xml
+          sed -i 's%PythonBox%魔王TV%g' app/src/main/res/values/strings.xml
           sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   
           
       - name: Extra Modify
