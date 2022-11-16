@@ -45,10 +45,10 @@ jobs:
         working-directory: ${{ matrix.repoName }}
         run: |
           cp -rf $GITHUB_WORKSPACE/DIY/pyramid.aar app/libs/pyramid.aar
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标4.png app/src/main/res/drawable-hdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标4.png app/src/main/res/drawable-xhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标4.png app/src/main/res/drawable-xxhdpi/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标4.png app/src/main/res/drawable-xxxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标6.png app/src/main/res/drawable-hdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标6.png app/src/main/res/drawable-xhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标6.png app/src/main/res/drawable-xxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标6.png app/src/main/res/drawable-xxxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_bg.png app/src/main/res/drawable/app_bg.png
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/App.java app/src/main/java/com/github/tvbox/osc/base/App.java
           sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/res/layout/item_home_sort.xml
