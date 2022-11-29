@@ -51,7 +51,7 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/png/背景5.png app/src/main/res/drawable/app_bg.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_banner.png app/src/main/res/drawable/app_banner.png
-          cp -rf $GITHUB_WORKSPACE/DIY/qbox/App.java app/src/main/java/com/github/tvbox/osc/base/App.java
+          cp -rf $GITHUB_WORKSPACE/DIY/qbox/MaoApp.java app/src/main/java/com/github/tvbox/osc/base/App.java
           sed -i 's%播放器 % %g' app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
           sed -i 's%android:layout_width="@dimen%vs_560"%g'  app/src/main/res/values/dimens.xml 
           sed -i 's%6000%5000%g'  app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
