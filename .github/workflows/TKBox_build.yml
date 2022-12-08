@@ -49,6 +49,7 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-xxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-xxxhdpi/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/app_bg.png app/src/main/res/drawable/app_bg.png
+          cp -rf $GITHUB_WORKSPACE/DIY/tbox/build.gradle app/build.gradle
           sed -i 's%播放器 % %g' app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
           sed -i 's%android:layout_width="@dimen%vs_560"%g'  app/src/main/res/values/dimens.xml 
           sed -i 's%6000%5000%g'  app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
@@ -57,23 +58,6 @@ jobs:
           sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/res/layout/item_home_sort.xml
           sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
-          sed -i 's%}
-
-
-android.applicationVariants.all {
-    variant ->
-        variant.outputs.all { output ->
-            def date = new Date().format("yyyy年MM月dd日", TimeZone.getTimeZone("GMT+08"))
-            if (variant.buildType.name == 'debug'){
-                output.outputFileName = "tvbox_${android.defaultConfig.versionName}_${date}_debug.apk"
-            }else if (variant.buildType.name == 'release'){
-                output.outputFileName = "tvbox_${date}.apk"
-                println(String.format("UpdateUrl->https://mayishidai.cn/tv/apk/%s", URLEncoder.encode(output.outputFileName, "UTF-8")));
-            }
-        }
-}
-}%}
-%g' app/build.gradle
           sed -i 's%dd MMM%dd MMM yyyy%g' app/src/main/res/values/strings.xml
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values/strings.xml
           sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   
