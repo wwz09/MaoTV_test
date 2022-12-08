@@ -11,8 +11,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - userName: 1021wang
-            repoName: TVBoxOS-2
+          - userName: gjf026
+            repoName: TVBoxOS
             branchName: main
             appName: MaoTV
             osName: lm
