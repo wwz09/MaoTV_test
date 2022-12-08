@@ -44,24 +44,23 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/tbox/strings.xml app/src/main/res/values-zh/strings.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/等待图标.png app/src/main/res/drawable/icon_loading.png
-          cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
-          cp -rf $GITHUB_WORKSPACE/DIY/png/背景1.png app/src/main/res/drawable/app_bg.png
-          sed -i 's%android:visibility="gone"%%g'  app/src/main/res/layout/fragment_user.xml
-          sed -i 's%tvWifi"%tvWifi" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
-          sed -i 's%tvFind"%tvFind" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
-          sed -i 's%tvMenu"%tvMenu" android:visibility="gone"%g' app/src/main/res/layout/activity_home.xml
-          sed -i 's%800%570%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
-          sed -i 's%HOME_REC, 2%HOME_REC, 1%g' app/src/main/java/com/github/tvbox/osc/base/App.java 
-          sed -i 's%getContext(), 3%getContext(), 2%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-hdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-xhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-xxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/图标1.png app/src/main/res/drawable-xxxhdpi/app_icon.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/app_bg.png app/src/main/res/drawable/app_bg.png
+          sed -i 's%播放器 % %g' app/src/main/java/com/github/tvbox/osc/util/PlayerHelper.java
+          sed -i 's%android:layout_width="@dimen%vs_560"%g'  app/src/main/res/values/dimens.xml 
+          sed -i 's%6000%5000%g'  app/src/main/java/com/github/tvbox/osc/player/controller/VodController.java
+          sed -i 's%380+200*spanCount%680+600*spanCount%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+          sed -i 's%spanCount+1%spanCount%g'  app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
+          sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/res/layout/item_home_sort.xml
+          sed -i 's%color_BBFFFFFF%color_FFFFFF%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
-          sed -i 's%MM月dd日%yyyy年 MM月 dd日%g' app/src/main/res/values-zh/strings.xml
           sed -i 's%dd MMM%dd MMM yyyy%g' app/src/main/res/values/strings.xml
           sed -i 's%TVBox%TKBox%g' app/src/main/res/values/strings.xml
-          sed -i 's%TVBox%TKBox%g' app/src/main/res/values-zh/strings.xml     
-          sed -i 's%HomeActivity.getRes().getString(R.string.app_source));% "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java 
+          sed -i 's%(HawkConfig.API_URL, "");%(HawkConfig.API_URL, "https://0a.fit/bbNnz");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java   
+          sed -i 's%Hawk.put(HawkConfig.PLAY_TYPE, 1);%Hawk.put(HawkConfig.HOME_REC, 1);       // Home Rec 0=豆瓣, 1=推荐, 2=历史\n Hawk.put(HawkConfig.PLAY_TYPE, 1);      // Player   0=系统, 1=IJK, 2=Exo\n Hawk.put(HawkConfig.IJK_CODEC, "硬解码");// IJK Render 软解码, 硬解码\n %g' app/src/main/java/com/github/tvbox/osc/base/App.java
           
       - name: Extra Modify
         if: ${{ env.commit }}
