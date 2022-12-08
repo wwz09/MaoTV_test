@@ -49,7 +49,7 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/taka旧主界面.xml app/src/main/res/layout/fragment_user.xml
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/activity_home_top界面.xml app/src/main/res/layout/activity_home.xml
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
-	  cp -rf $GITHUB_WORKSPACE/DIY/png/背景3.png app/src/main/res/drawable/app_bg.png
+          cp -rf $GITHUB_WORKSPACE/DIY/png/背景3.png app/src/main/res/drawable/app_bg.png
           sed -i 's%color_BBFFFFFF%color_32364E_80%g' app/src/main/res/layout/item_home_sort.xml
           sed -i 's%color_CCFFFFFF%color_32364E_80%g' app/src/main/res/layout/fragment_user.xml
           sed -i 's%color_BBFFFFFF%color_32364E_80%g' app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
