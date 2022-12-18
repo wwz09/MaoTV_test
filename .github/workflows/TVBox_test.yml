@@ -44,7 +44,7 @@ jobs:
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          chmod +x /DIY/py.sh
+          chmod +x ${{ github.workspace }}/DIY/py.sh
           bash ${{ github.workspace }}/DIY/py.sh
           
       - name: DIY
