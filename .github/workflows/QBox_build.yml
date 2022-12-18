@@ -39,6 +39,13 @@ jobs:
           cd ${{ matrix.repoName }}
           git checkout ${{ env.commit }}
           echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
+      
+      - name: DIY PY
+        if: ${{ env.commit }}
+        working-directory: ${{ matrix.repoName }}
+        run: |
+          chmod +x ${{ github.workspace }}/DIY/py.sh
+          bash ${{ github.workspace }}/DIY/py.sh
           
       - name: DIY
         if: ${{ env.commit }}
