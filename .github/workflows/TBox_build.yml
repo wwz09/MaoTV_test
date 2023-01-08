@@ -60,7 +60,6 @@ jobs:
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/HomeActivity.java app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/fragment_model.xml app/src/main/res/layout/fragment_model.xml
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/ModelSettingFragment.java app/src/main/java/com/github/tvbox/osc/ui/fragment/ModelSettingFragment.java
-          sed -i 's/6666/还原旧界面，增加首页多排/g'  app/src/main/res/layout/dialog_version.xml
           sed -i 's/vs_30/vs_15/g' app/src/main/res/layout/dialog_select.xml
           sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' app/src/main/res/values-zh/strings.xml
           sed -i 's%TVBox%大仙TV%g' app/src/main/res/values-zh/strings.xml
