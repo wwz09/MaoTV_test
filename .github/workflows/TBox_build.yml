@@ -40,27 +40,13 @@ jobs:
           git checkout ${{ env.commit }}
           echo "tag=$(git log --date=format:'%Y%m%d-%H%M' --pretty=format:%cd ${{ env.commitS }} -1)" >> $GITHUB_ENV
       
-      - name: DIY PY
-        if: ${{ env.commit }}
-        working-directory: ${{ matrix.repoName }}
-        run: |
-          chmod +x ${{ github.workspace }}/DIY/py.sh
-          bash ${{ github.workspace }}/DIY/py.sh
-          
       - name: DIY
         if: ${{ env.commit }}
         working-directory: ${{ matrix.repoName }}
         run: |
-          cp -rf $GITHUB_WORKSPACE/DIY/png/图标7.png app/src/main/res/drawable/app_icon.png
-          cp -rf $GITHUB_WORKSPACE/DIY/png/等待图标.png app/src/main/res/drawable/icon_loading.png
-          cp -rf $GITHUB_WORKSPACE/DIY/tbox/taka旧主界面.xml app/src/main/res/layout/fragment_user.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/tbox/activity_home_top界面.xml app/src/main/res/layout/activity_home.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
-          sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' app/src/main/res/values-zh/strings.xml
-          sed -i 's%TVBox%大仙TV%g' app/src/main/res/values-zh/strings.xml
-          sed -i 's%com.github.tvbox.osc%com.github.tvbox.osc.${{ matrix.osName }}%g' app/build.gradle
-          sed -i 's%HOME_REC, 2%HOME_REC, 1%g' app/src/main/java/com/github/tvbox/osc/base/App.java  
-          sed -i 's%HomeActivity.getRes().getString(R.string.app_source));% "http://gg.gg/12uv0a");%g' app/src/main/java/com/github/tvbox/osc/api/ApiConfig.java     
+          chmod +x ${{ github.workspace }}/DIY/tb.sh
+          bash ${{ github.workspace }}/DIY/tb.sh
+            
            
       - name: Extra Modify
         if: ${{ env.commit }}
