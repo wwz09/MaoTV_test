@@ -53,8 +53,6 @@ jobs:
         run: |
           cp -rf $GITHUB_WORKSPACE/DIY/png/图标7.png app/src/main/res/drawable/app_icon.png
           cp -rf $GITHUB_WORKSPACE/DIY/png/等待图标.png app/src/main/res/drawable/icon_loading.png
-          cp -rf $GITHUB_WORKSPACE/DIY/tbox/taka旧主界面.xml app/src/main/res/layout/fragment_user.xml
-          cp -rf $GITHUB_WORKSPACE/DIY/tbox/activity_home_top界面.xml app/src/main/res/layout/activity_home.xml
           cp -rf $GITHUB_WORKSPACE/DIY/qbox/epg_data.json app/src/main/assets/epg_data.json
           cp -rf $GITHUB_WORKSPACE/DIY/tbox/HomeActivity.java app/src/main/java/com/github/tvbox/osc/ui/activity/HomeActivity.java
           sed -i 's/MM月dd日/yyyy年 MM月 dd日/g' app/src/main/res/values-zh/strings.xml
